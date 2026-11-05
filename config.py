@@ -13,7 +13,7 @@ logging.basicConfig(
 )
 log = logging.getLogger("config")
 
-BOT_TOKEN: str = "9192070719:AAEvkgq_Vxl3AOUCqvKaOVnfHlpQa74SXDU"
+BOT_TOKEN: str = "9234582463:AAFuZtjx9VcejWWoAh6pFwQodbjbstkM2m0"
 TELEGRAM_PROXY: str = os.getenv("TELEGRAM_PROXY", "").strip()
 HOST: str = os.getenv("HOST", "127.0.0.1").strip()
 PORT: int = int(os.getenv("PORT", "8000"))
