@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>LUMIÈRE — приватный кабинет экспертного ухода за волосами</title>
+  <meta name="description" content="Кератин, ботокс, холодное восстановление и наращивание волос в приватном кабинете одного мастера.">
+  <meta name="theme-color" content="#0e0d0f">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <!-- Шапка -->
+  <header class="header">
+    <div class="container header__inner">
+      <a href="#top" class="logo">LUMIÈRE<span>Private Hair Atelier</span></a>
+      <a href="#booking" class="btn btn--outline header__cta">Записаться</a>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- Экран 1: главный -->
+    <section class="hero">
+      <div class="container hero__content">
+        <p class="eyebrow">Private Hair Atelier</p>
+        <h1 class="hero__title">Ваши волосы&nbsp;— <em>в&nbsp;одних руках</em></h1>
+        <p class="hero__text">Приватный кабинет одного мастера. Один гость, никаких посторонних — экспертный уход за волосами в атмосфере полной конфиденциальности.</p>
+        <a href="#booking" class="btn btn--gold">Оставить заявку</a>
+      </div>
+    </section>
+
+    <!-- Экран 2: услуги -->
+    <section class="services" id="services">
+      <div class="container">
+        <p class="eyebrow">Процедуры</p>
+        <h2 class="section-title">Экспертный уход <em>для ваших волос</em></h2>
+        <div class="services__grid">
+          <article class="service"><span class="service__num">I</span><h3>Glossy Keratin</h3><p>Кератиновое выпрямление: гладкость и зеркальный блеск до 5 месяцев.</p></article>
+          <article class="service"><span class="service__num">II</span><h3>Absolute Botox</h3><p>Ботокс для волос: плотность, упругость и сияние без утяжеления.</p></article>
+          <article class="service"><span class="service__num">III</span><h3>Scalp Detox</h3><p>Пилинг кожи головы: очищение и баланс — основа здоровых волос.</p></article>
+          <article class="service"><span class="service__num">IV</span><h3>Cold Reconstruction</h3><p>Холодное молекулярное восстановление без нагрева.</p></article>
+          <article class="service"><span class="service__num">V</span><h3>Bioprotein Extensions</h3><p>Наращивание биопротеиновых волос, неотличимых от натуральных.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Экран 3: форма заявки -->
+    <section class="booking" id="booking">
+      <div class="container booking__grid">
+        <div>
+          <p class="eyebrow">Онлайн-запись</p>
+          <h2 class="section-title">Ваш визит <em>начинается здесь</em></h2>
+          <p class="booking__text">Оставьте заявку — я свяжусь с вами в течение 15 минут и подберу удобное время.</p>
+        </div>
+
+        <form class="form" id="lead-form" novalidate>
+          <div class="field">
+            <label for="name">Имя</label>
+            <input id="name" name="name" type="text" autocomplete="name" placeholder="Анна" required minlength="2" maxlength="80">
+            <span class="field__error" data-error-for="name"></span>
+          </div>
+          <div class="field">
+            <label for="phone">Телефон</label>
+            <input id="phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" placeholder="+7 (900) 000-00-00" required>
+            <span class="field__error" data-error-for="phone"></span>
+          </div>
+          <div class="field">
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" autocomplete="email" inputmode="email" placeholder="anna@mail.ru" required>
+            <span class="field__error" data-error-for="email"></span>
+          </div>
+          <div class="field">
+            <label for="comment">Комментарий <span class="optional">— необязательно</span></label>
+            <textarea id="comment" name="comment" rows="3" maxlength="1000" placeholder="Какая процедура интересует, удобное время…"></textarea>
+            <span class="field__error" data-error-for="comment"></span>
+          </div>
+
+          <button type="submit" class="btn btn--gold btn--block" id="submit-btn">
+            <span class="btn__label">Отправить</span>
+            <span class="spinner" aria-hidden="true"></span>
+          </button>
+          <p class="form__status" id="form-status" role="alert"></p>
+          <p class="form__note">Нажимая кнопку, вы соглашаетесь с обработкой персональных данных.</p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">© <span id="year"></span> LUMIÈRE Private Hair Atelier</div>
+  </footer>
+
+  <!-- Модальное окно успеха -->
+  <div class="modal" id="success-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" hidden>
+    <div class="modal__backdrop" data-close></div>
+    <div class="modal__card">
+      <div class="modal__icon" aria-hidden="true">
+        <svg viewBox="0 0 52 52"><circle cx="26" cy="26" r="24"/><path d="M15 27l7 7 15-16"/></svg>
+      </div>
+      <h3 id="modal-title">Спасибо!</h3>
+      <p>Заявка принята, мы свяжемся с вами.</p>
+      <button type="button" class="btn btn--gold" data-close>Отлично</button>
+    </div>
+  </div>
+
+  <script src="/js/main.js"></script>
+</body>
+</html>
